@@ -8,9 +8,12 @@
     >
       <h1 class="mt-5 text-2xl font-bold px-5">DT Merch</h1>
       <ul class="menu w-full mt-10 px-0">
-        <li class="bordered"><a>Item 1</a></li>
-        <li class="hover-bordered"><a>Hover me</a></li>
-        <li class="hover-bordered"><a>Item 3</a></li>
+        <li
+          v-for="menuItem in menuItems"
+          :class="menuItem.path === $route.path ? 'bordered' : 'hover-bordered'"
+        >
+          <nuxt-link :to="menuItem.path">{{ menuItem.title }}</nuxt-link>
+        </li>
       </ul>
     </div>
 
@@ -23,6 +26,15 @@
     <!-- END : PAGE -->
   </div>
 </template>
+
+<script setup>
+const menuItems = [
+  { path: "/", title: "Accueil" },
+  { path: "/category/head", title: "Tête" },
+  { path: "/category/body", title: "Hauts" },
+  { path: "/category/other", title: "Autres" },
+];
+</script>
 
 <style scoped>
 .menu li.hover-bordered a:hover,
