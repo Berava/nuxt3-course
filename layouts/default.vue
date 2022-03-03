@@ -19,7 +19,7 @@
 
     <!-- START : MAIN CONTENT -->
     <div class="w-full pl-64">
-      <div class="p-5">
+      <div :class="$route.path === '/' ? '' : 'p-5'">
         <slot />
       </div>
     </div>
