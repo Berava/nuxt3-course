@@ -1,3 +1,12 @@
+<script setup>
+useMeta({
+  title: "Home",
+  bodyAttrs: {
+    class: "homepage",
+  },
+});
+</script>
+
 <template>
   <div
     class="hero min-h-screen"
